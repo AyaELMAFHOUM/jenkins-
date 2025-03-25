@@ -36,8 +36,9 @@ pipeline {
             steps {
                 script {
                     // Appliquer les fichiers de déploiement et service sur Kubernetes
-                    sh 'kubectl apply -f php-deployment.yml'
                     sh 'kubectl apply -f mysql-deployment.yml'
+                    sh 'kubectl apply -f php-deployment.yml'
+                    
                     
                 }
             }
