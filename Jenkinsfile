@@ -25,7 +25,8 @@ pipeline {
                         phpImage.push("latest")
 
                         // Build de l'image MySQL
-                        def mysqlImage = docker.build("aya452/imagee:latest", "-f dockerfile .")
+                        def mysqlImage = docker.build("aya452/imagee:latest", "-f d
+                        ockerfile .")
                         mysqlImage.push("latest")
                     }
                 }
@@ -36,8 +37,8 @@ pipeline {
             steps {
                 script {
                     // Appliquer les fichiers de déploiement et service sur Kubernetes
-                    sh 'kubectl apply -f k8s/php-deployment.yml'
-                    sh 'kubectl apply -f k8s/mysql-deployment.yml'
+                    sh 'kubectl apply -f php-deployment.yml'
+                    sh 'kubectl apply -f mysql-deployment.yml'
                     
                 }
             }
