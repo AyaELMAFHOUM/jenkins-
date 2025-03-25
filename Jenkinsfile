@@ -25,8 +25,7 @@ pipeline {
                         phpImage.push("latest")
 
                         // Build de l'image MySQL
-                        def mysqlImage = docker.build("aya452/imagee:latest", "-f d
-                        ockerfile .")
+                        def mysqlImage = docker.build("aya452/imagee:latest", "-f dockerfile .")
                         mysqlImage.push("latest")
                     }
                 }
