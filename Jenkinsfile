@@ -20,12 +20,12 @@ pipeline {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
                         // Build de l'image PHP
-                        def phpImage = docker.build("aya452/gestionabsence-php-apach:latest", "-f php/Dockerfile .")
+                        def phpImage = docker.build("aya452/gestionabsence-php-apach:latest", "-f dockerfile .")
                         
                         phpImage.push("latest")
 
                         // Build de l'image MySQL
-                        def mysqlImage = docker.build("aya452/imagee:latest", "-f mysql/Dockerfile .")
+                        def mysqlImage = docker.build("aya452/imagee:latest", "-f dockerfile .")
                         mysqlImage.push("latest")
                     }
                 }
