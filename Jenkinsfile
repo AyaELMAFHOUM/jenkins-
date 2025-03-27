@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        KUBECONFIG = credentials('kube-config')  // Récupère le kubeconfig pour Kubernetes
+        //KUBECONFIG = credentials('kube-config')  // Récupère le kubeconfig pour Kubernetes
         GITHUB_CREDENTIALS = credentials('github-token') 
     }
 
